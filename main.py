@@ -30,21 +30,23 @@ def get_locaion_citi(citi):
     i = 0
 
     for i in range(len(data['results'])):
-        print(data['results'][i]['latitude'])
+        print(data['results'][i]['name'] + ' - ' + str(i+1))
 
-    # location_citit = [
-    #     data['results'][0]['latitude'],
-    #     data['results'][0]['longitude']
-    # ]
+    choose = input('\nВиберіть місто, яке вам потрібне, з цих перерахованих ')
 
-    # return location_citit
+    location_citit = [
+        data['results'][int(choose)-1]['latitude'],
+        data['results'][int(choose)-1]['longitude']
+    ]
+
+    return location_citit
 
 
-ask_citi = input("Введіть назву міста (АНГЛІЙСЬКОЮ МОВОЮ), температуру в якого ви хочете взанти? ")
+ask_citi = input("\nВведіть назву міста (АНГЛІЙСЬКОЮ МОВОЮ), температуру в якого ви хочете взанти? ")
 
 location = get_locaion_citi(ask_citi)
 
-#temperatura_citi = get_info_about_weather(location)
+temperatura_citi = get_info_about_weather(location)
 
-print("Місце знаходження міста: " + str(location))
-#print("Температура в місті: " + str(temperatura_citi))
+print("\nМісце знаходження міста: " + str(location))
+print("\nТемпература в місті: " + str(temperatura_citi))

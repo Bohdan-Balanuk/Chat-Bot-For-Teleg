@@ -94,7 +94,7 @@ def react_on_message(message):
             for i in range(len(data['results'])):
                 bot.send_message(message.chat.id, data['results'][i]['name'] + ' - ' + str(i+1))
 
-            bot.send_message(message.chat.id, 'Виберіть місто, яке вам потрібне, з цих перерахованих')#, reply_markup = markup)
+            bot.send_message(message.chat.id, 'Виберіть місто, яке вам потрібне, з цих перерахованих')
 
         location_citit = [
                 data['results'][int(choose)-1]['latitude'],

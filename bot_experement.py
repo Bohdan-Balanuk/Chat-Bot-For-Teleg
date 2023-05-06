@@ -80,7 +80,6 @@ def react_on_message(message):
 
         else:           
             town = message.text
-            print(town)
             citi = town
         
         location_perms = {
